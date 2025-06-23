@@ -45,9 +45,6 @@ export default function RootLayout({
                       <span className="sr-only">Sign up</span>
                   </SignUpButton>
               </SignedOut>
-              <SignedIn>
-                  <UserButton />
-              </SignedIn>
           </header>
           <RootProviders>{children}</RootProviders>
           </body>
