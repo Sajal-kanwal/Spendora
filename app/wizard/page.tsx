@@ -6,6 +6,7 @@ import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/compo
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
 import Logo from "@/components/logo";
+import {CurrencyComboBox} from "@/components/CurrencyComboBox";
 
 async function page() {
     const user = await currentUser()
