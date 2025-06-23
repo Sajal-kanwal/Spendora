@@ -5,13 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19da1c2b-9cbb-4b9e-9133-6996717d6e34" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/components/SkeletonWrapper.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(dashboard)/_components/CategoryPicker.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(dashboard)/_components/CreateCategoryDialog.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(dashboard)/_components/CreateTransactionDialog.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(dashboard)/loading.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/categories/route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schema/categories.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schema/transaction.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schema/userSettings.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/user-settings/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/user-settings/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(dashboard)/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(dashboard)/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/wizard/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/wizard/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/wizard/_actions/userSettings.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/wizard/_actions/userSettings.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/CurrencyComboBox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/CurrencyComboBox.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/prisma.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/prisma.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prisma/dev.db" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/dev.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -100,7 +110,7 @@
       <workItem from="1750617867230" duration="343000" />
       <workItem from="1750651086707" duration="14815000" />
       <workItem from="1750678478748" duration="1771000" />
-      <workItem from="1750680361760" duration="1921000" />
+      <workItem from="1750680361760" duration="15821000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -142,7 +152,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750664969461</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1750682471846</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1750682471846</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
