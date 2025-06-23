@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import {ClerkProvider, SignedIn, SignedOut, SignInButton, SignUpButton, UserButton} from "@clerk/nextjs";
+import {ClerkProvider, SignedOut, SignInButton, SignUpButton,} from "@clerk/nextjs";
 import RootProviders from "@/components/providers/RootProviders";
 
 const geistSans = Geist({
