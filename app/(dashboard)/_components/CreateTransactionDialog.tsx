@@ -1,6 +1,6 @@
 "use client";
 
-import {ReactNode} from "react";
+import {ReactNode, useCallback} from "react";
 import {TransactionType} from "@/lib/types";
 
 interface Props {
@@ -25,8 +25,13 @@ function CreateTransactionDialog({ trigger, type }: Props) {
         defaultValues: {
             type,
             date: new Date(),
-        }
-    })
+        },
+    });
+
+    const handleCategoryChange = useCallback((value: string) => {
+        form.setValue("category", value);
+    },[form]);
+
     return (
         <Dialog>
             <DialogTrigger asChild>{trigger}</DialogTrigger>
@@ -75,7 +80,6 @@ function CreateTransactionDialog({ trigger, type }: Props) {
                                 </FormItem>
                             )}
                         />
-
                         <div className="flex items-center justify-between gap-2">
                             <FormField
                                 control={form.control}
@@ -84,7 +88,7 @@ function CreateTransactionDialog({ trigger, type }: Props) {
                                     <FormItem>
                                         <FormLabel>Category</FormLabel>
                                         <FormControl>
-                                            <CategoryPicker type={type} />
+                                            <CategoryPicker type={type} onChange={handleCategoryChange} />
                                         </FormControl>
                                         <FormDescription>
                                             Select a category for this transaction
