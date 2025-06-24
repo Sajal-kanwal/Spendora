@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19da1c2b-9cbb-4b9e-9133-6996717d6e34" name="Changes" comment="Initial commit">
+      <change afterPath="$PROJECT_DIR$/app/(dashboard)/_actions/transactions.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/helpers.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(dashboard)/_actions/categories.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(dashboard)/_actions/categories.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(dashboard)/_components/CategoryPicker.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(dashboard)/_components/CategoryPicker.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(dashboard)/_components/CreateCategoryDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(dashboard)/_components/CreateCategoryDialog.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(dashboard)/_components/CreateTransactionDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(dashboard)/_components/CreateTransactionDialog.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prisma/dev.db" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/dev.db" afterDir="false" />
     </list>
@@ -98,7 +97,8 @@
       <workItem from="1750617867230" duration="343000" />
       <workItem from="1750651086707" duration="14815000" />
       <workItem from="1750678478748" duration="1771000" />
-      <workItem from="1750680361760" duration="20184000" />
+      <workItem from="1750680361760" duration="20217000" />
+      <workItem from="1750751916360" duration="5605000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -156,7 +156,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750698567138</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1750702638825</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1750702638825</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
