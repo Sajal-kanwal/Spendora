@@ -1,11 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
 }
 @custom-variant dark (&:is(.dark *));
 

@@ -7,6 +7,7 @@ import {DateRangePicker} from "@/components/ui/date-range-picker";
 import {MAX_DATE_RANGE_DAYS} from "@/lib/constants";
 import {toast} from "sonner";
 import StatsCards from "@/app/(dashboard)/_components/StatsCards";
+import CategoriesStats from "@/app/(dashboard)/_components/CategoriesStats";
 
 function Overview({userSettings}: { userSettings: UserSettings }) {
     const [dateRange, setDateRange] = React.useState<{from: Date; to: Date;}> ({
@@ -42,6 +43,11 @@ function Overview({userSettings}: { userSettings: UserSettings }) {
             from={dateRange.from}
             to={dateRange.to}
         />
+            <CategoriesStats
+                userSettings={userSettings}
+                from={dateRange.from}
+                to={dateRange.to}
+            />
 
         </>
     )

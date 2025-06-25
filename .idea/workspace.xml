@@ -4,19 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19da1c2b-9cbb-4b9e-9133-6996717d6e34" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/app/(dashboard)/_components/Overview.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(dashboard)/_components/StatsCards.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/api/stats/balance/route.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/ui/date-input.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/ui/date-range-picker.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/constants.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schema/overview.ts" afterDir="false" />
+    <list default="true" id="19da1c2b-9cbb-4b9e-9133-6996717d6e34" name="Changes" comment="Overview Section Updated">
+      <change afterPath="$PROJECT_DIR$/app/(dashboard)/_components/CategoriesStats.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(dashboard)/_components/History.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(dashboard)/_components/HistoryPeriodSelector.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/history-data/route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/history-periods/route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/stats/categories/route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/providers.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/skeletons/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(auth)/sign-up/[[...sign-in]]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(auth)/sign-up/[[...sign-up]]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(dashboard)/_components/Overview.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(dashboard)/_components/Overview.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(dashboard)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(dashboard)/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(dashboard)/loading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(dashboard)/loading.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(dashboard)/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(dashboard)/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/helpers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/helpers.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/progress.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/progress.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prisma/dev.db" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/dev.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,8 +34,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -106,7 +113,8 @@
       <workItem from="1750651086707" duration="14815000" />
       <workItem from="1750678478748" duration="1771000" />
       <workItem from="1750680361760" duration="20217000" />
-      <workItem from="1750751916360" duration="15576000" />
+      <workItem from="1750751916360" duration="31362000" />
+      <workItem from="1750830665875" duration="8163000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -180,7 +188,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750762163504</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Overview Section Updated">
+      <option name="closed" value="true" />
+      <created>1750773825350</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1750773825350</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +204,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="Overview Section Updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Overview Section Updated" />
   </component>
 </project>
