@@ -4,27 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19da1c2b-9cbb-4b9e-9133-6996717d6e34" name="Changes" comment="Overview Section Updated">
-      <change afterPath="$PROJECT_DIR$/app/(dashboard)/_components/CategoriesStats.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(dashboard)/_components/History.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(dashboard)/_components/HistoryPeriodSelector.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/api/history-data/route.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/api/history-periods/route.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/api/stats/categories/route.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/providers.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/skeletons/index.tsx" afterDir="false" />
+    <list default="true" id="19da1c2b-9cbb-4b9e-9133-6996717d6e34" name="Changes" comment="Dashboard Implemented">
+      <change afterPath="$PROJECT_DIR$/app/(dashboard)/_components/DeleteCategoryDialog.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(dashboard)/transactions/_actions/deleteTransaction.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(dashboard)/transactions/_components/DeleteTransactionDialog.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(dashboard)/transactions/_components/TransactionTable.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(dashboard)/transactions/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/transactions-history/route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/datatable/ColumnHeader.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/datatable/ColumnToggle.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/datatable/FacetedFilters.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(auth)/sign-up/[[...sign-in]]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(auth)/sign-up/[[...sign-up]]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(dashboard)/_actions/categories.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(dashboard)/_actions/categories.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(dashboard)/_components/CategoriesStats.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(dashboard)/_components/CategoriesStats.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(dashboard)/_components/CreateCategoryDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(dashboard)/_components/CreateCategoryDialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(dashboard)/_components/CreateTransactionDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(dashboard)/_components/CreateTransactionDialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(dashboard)/_components/History.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(dashboard)/_components/History.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(dashboard)/_components/HistoryPeriodSelector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(dashboard)/_components/HistoryPeriodSelector.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(dashboard)/_components/Overview.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(dashboard)/_components/Overview.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(dashboard)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(dashboard)/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(dashboard)/loading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(dashboard)/loading.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(dashboard)/_components/StatsCards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(dashboard)/_components/StatsCards.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(dashboard)/manage/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(dashboard)/manage/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(dashboard)/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(dashboard)/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/providers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/providers.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/date-input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/date-input.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/ui/progress.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/progress.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prisma/dev.db" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/dev.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schema/categories.ts" beforeDir="false" afterPath="$PROJECT_DIR$/schema/categories.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +123,8 @@
       <workItem from="1750678478748" duration="1771000" />
       <workItem from="1750680361760" duration="20217000" />
       <workItem from="1750751916360" duration="31362000" />
-      <workItem from="1750830665875" duration="8163000" />
+      <workItem from="1750830665875" duration="16767000" />
+      <workItem from="1750854561593" duration="20157000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -196,7 +206,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750773825350</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Dashboard Implemented">
+      <option name="closed" value="true" />
+      <created>1750843504328</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1750843504328</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,6 +223,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Overview Section Updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="Overview Section Updated" />
+    <MESSAGE value="Dashboard Implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dashboard Implemented" />
   </component>
 </project>

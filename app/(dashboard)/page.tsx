@@ -7,6 +7,7 @@ import CreateTransactionDialog from "@/app/(dashboard)/_components/CreateTransac
 import Overview from "@/app/(dashboard)/_components/Overview";
 import History from "@/app/(dashboard)/_components/History";
 import { OverviewSkeleton, HistorySkeleton } from "@/components/skeletons";
+import {Plus, TrendingUp, TrendingDown, ChevronsUp, ChevronsDown} from "lucide-react";
 
 async function Page() {
     const user = await currentUser();
@@ -25,47 +26,62 @@ async function Page() {
     }
 
     return (
-        <div className="min-h-screen bg-background">
-            {/* Header Section */}
-            <div className="border-b bg-card">
-                <div className="container flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-6 py-6 sm:py-8 px-4 sm:px-8">
-                    <div className="space-y-1">
-                        <p className="text-2xl sm:text-3xl font-bold">
-                            Hello, {user.firstName}! 👋
-                        </p>
-                        <p className="text-sm text-muted-foreground hidden sm:block">
-                            Welcome back to your financial dashboard
-                        </p>
-                    </div>
+        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
+            {/* Hero Header Section */}
+            <div className="relative overflow-hidden border-b bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 via-purple-600/5 to-indigo-600/5" />
+                <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+                    <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                        {/* Welcome Section */}
+                        <div className="space-y-2">
+                            <div className="flex items-center gap-3">
+                                <div>
+                                    <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-slate-900 to-slate-600 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
+                                        Welcome back, {user.firstName}!
+                                    </h1>
+                                    <p className="text-slate-600 dark:text-slate-400 mt-1">
+                                        Track your finances and achieve your goals
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
-                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3">
-                        <CreateTransactionDialog trigger={
-                            <Button
-                                size="sm"
-                                className="border border-emerald-500 bg-emerald-600 text-white hover:bg-emerald-500 hover:border-emerald-400 transition-colors duration-200 shadow-md w-full sm:w-auto"
-                            >
-                                <span className="sm:hidden">💰 New Income</span>
-                                <span className="hidden sm:inline">New Income 💰</span>
-                            </Button>}
-                                                 type="income"
-                        />
+                        {/* Action Buttons */}
+                        <div className="flex flex-col sm:flex-row gap-3">
+                            <CreateTransactionDialog
+                                trigger={
+                                    <Button
+                                        size="lg"
+                                        className="group relative overflow-hidden bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                                    >
+                                        <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12" />
+                                        <ChevronsUp className="w-4 h-4 mr-2" />
+                                        Add Income
+                                    </Button>
+                                }
+                                type="income"
+                            />
 
-                        <CreateTransactionDialog trigger={
-                            <Button
-                                size="sm"
-                                className="border border-rose-500 bg-rose-600 text-white hover:bg-rose-500 hover:border-rose-400 transition-colors duration-200 shadow-md w-full sm:w-auto"
-                            >
-                                <span className="sm:hidden">💸 New Expense</span>
-                                <span className="hidden sm:inline">New Expense 💸</span>
-                            </Button>}
-                                                 type="expense"
-                        />
+                            <CreateTransactionDialog
+                                trigger={
+                                    <Button
+                                        size="lg"
+                                        className="group relative overflow-hidden bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                                    >
+                                        <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12" />
+                                        <ChevronsDown className="w-4 h-4 mr-2" />
+                                        Add Expense
+                                    </Button>
+                                }
+                                type="expense"
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
 
             {/* Main Content */}
-            <div className="container px-4 sm:px-8 py-6 space-y-8">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
                 <Suspense fallback={<OverviewSkeleton />}>
                     <Overview userSettings={userSettings} />
                 </Suspense>
