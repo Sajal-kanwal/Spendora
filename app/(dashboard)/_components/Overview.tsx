@@ -2,7 +2,7 @@
 
 import React from 'react'
 import {UserSettings} from "@/lib/generated/prisma";
-import {differenceInDays, startOfMonth} from "date-fns";
+import {differenceInDays, startOfMonth, subDays} from "date-fns";
 import {DateRangePicker} from "@/components/ui/date-range-picker";
 import {MAX_DATE_RANGE_DAYS} from "@/lib/constants";
 import {toast} from "sonner";
@@ -13,7 +13,7 @@ import { Card } from "@/components/ui/card";
 
 function Overview({userSettings}: { userSettings: UserSettings }) {
     const [dateRange, setDateRange] = React.useState<{from: Date; to: Date;}> ({
-        from: startOfMonth(new Date()),
+        from: subDays(new Date(), MAX_DATE_RANGE_DAYS),
         to: new Date(),
     });
 

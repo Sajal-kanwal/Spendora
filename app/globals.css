@@ -4,6 +4,24 @@
   width: 0px;
   background: transparent;
 }
+.emoji-picker-wrapper .epr-body {
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+}
+
+.emoji-picker-wrapper .epr-emoji-category-label {
+  padding-left: 0.5rem;
+}
+
+.emoji-picker-wrapper .epr-search-container {
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+}
+
+.emoji-picker-wrapper .epr-category-nav {
+  padding: 0 !important;
+  margin: 0 !important;
+}
 
 @custom-variant dark (&:is(.dark *));
 

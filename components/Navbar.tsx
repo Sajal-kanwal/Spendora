@@ -43,21 +43,21 @@ const items = [
 function MobileNavbar() {
     const [isOpen, setIsOpen] = React.useState(false);
     return (
-        <div className="block border-separate bg-slate-900/95 backdrop-blur-xl border-b border-slate-800/50 shadow-2xl md:hidden sticky top-0 z-50">
+        <div className="block border-separate bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-slate-200/50 dark:border-slate-800/50 shadow-2xl md:hidden sticky top-0 z-50">
             <nav className="container flex items-center justify-between px-4 py-3">
                 <Sheet open={isOpen} onOpenChange={(open) => setIsOpen(open)}>
                     <SheetTrigger asChild>
                         <Button
                             variant={"ghost"}
                             size={"icon"}
-                            className="relative overflow-hidden bg-slate-800/50 hover:bg-slate-700/70 border border-slate-700/50 hover:border-slate-600/50 transition-all duration-300 group"
+                            className="relative overflow-hidden bg-slate-100/50 dark:bg-slate-800/50 hover:bg-slate-200/70 dark:hover:bg-slate-700/70 border border-slate-300/50 dark:border-slate-700/50 hover:border-slate-400/50 dark:hover:border-slate-600/50 transition-all duration-300 group"
                         >
                             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                            <Menu className="h-5 w-5 text-slate-300 group-hover:text-white transition-colors duration-300" />
+                            <Menu className="h-5 w-5 text-slate-600 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition-colors duration-300" />
                         </Button>
                     </SheetTrigger>
                     <SheetContent
-                        className="w-[320px] sm:w-[400px] bg-slate-900/98 backdrop-blur-xl border-r border-slate-800/50"
+                        className="w-[320px] sm:w-[400px] bg-white/98 dark:bg-slate-900/98 backdrop-blur-xl border-r border-slate-200/50 dark:border-slate-800/50"
                         side="left"
                     >
                         <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
@@ -80,14 +80,14 @@ function MobileNavbar() {
                                 />
                             ))}
                         </div>
-                        <div className="absolute bottom-6 left-4 right-4 flex items-center justify-between pt-6 border-t border-slate-800/50">
+                        <div className="absolute bottom-6 left-4 right-4 flex items-center justify-between pt-6 border-t border-slate-200/50 dark:border-slate-800/50">
                             <div className="flex items-center gap-3">
                                 <ThemeSwitchBtn />
                                 <UserButton
                                     afterSignOutUrl="/sign-in"
                                     appearance={{
                                         elements: {
-                                            avatarBox: "w-10 h-10 ring-2 ring-slate-700 hover:ring-blue-500 transition-all duration-300"
+                                            avatarBox: "w-10 h-10 ring-2 ring-slate-300 dark:ring-slate-700 hover:ring-blue-500 transition-all duration-300"
                                         }
                                     }}
                                 />
@@ -106,7 +106,7 @@ function MobileNavbar() {
                         afterSignOutUrl="/sign-in"
                         appearance={{
                             elements: {
-                                avatarBox: "w-9 h-9 ring-2 ring-slate-700 hover:ring-blue-500 transition-all duration-300"
+                                avatarBox: "w-9 h-9 ring-2 ring-slate-300 dark:ring-slate-700 hover:ring-blue-500 transition-all duration-300"
                             }
                         }}
                     />
@@ -118,7 +118,7 @@ function MobileNavbar() {
 
 function DesktopNavbar() {
     return (
-        <div className="hidden md:block border-separate border-b border-slate-800/50 bg-slate-900/95 backdrop-blur-xl shadow-2xl sticky top-0 z-50">
+        <div className="hidden md:block border-separate border-b border-slate-200/50 dark:border-slate-800/50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl shadow-2xl sticky top-0 z-50">
             <nav className="container flex items-center justify-between px-8">
                 <div className="flex h-[80px] min-h-[60px] items-center gap-x-8">
                     <Logo />
@@ -140,7 +140,7 @@ function DesktopNavbar() {
                         afterSignOutUrl="/sign-in"
                         appearance={{
                             elements: {
-                                avatarBox: "w-10 h-10 ring-2 ring-slate-700 hover:ring-blue-500 transition-all duration-300"
+                                avatarBox: "w-10 h-10 ring-2 ring-slate-300 dark:ring-slate-700 hover:ring-blue-500 transition-all duration-300"
                             }
                         }}
                     />
@@ -168,9 +168,9 @@ function NavbarItem({link, label, icon: Icon, description, clickCallback, isMobi
                     href={link}
                     className={cn(
                         "flex items-center gap-4 w-full p-4 rounded-xl transition-all duration-300 group relative overflow-hidden",
-                        "text-slate-400 hover:text-white",
-                        "hover:bg-slate-800/50 hover:border-slate-700/50",
-                        isActive && "text-white bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30"
+                        "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white",
+                        "hover:bg-slate-100/50 dark:hover:bg-slate-800/50 hover:border-slate-300/50 dark:hover:border-slate-700/50",
+                        isActive && "text-slate-900 dark:text-white bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30"
                     )}
                     onClick={() => {
                         if (clickCallback) clickCallback();
@@ -182,7 +182,7 @@ function NavbarItem({link, label, icon: Icon, description, clickCallback, isMobi
                             "p-2 rounded-lg transition-all duration-300",
                             isActive
                                 ? "bg-blue-500/20 text-blue-400"
-                                : "bg-slate-800/50 text-slate-400 group-hover:bg-slate-700/50 group-hover:text-white"
+                                : "bg-slate-100/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 group-hover:bg-slate-200/50 dark:group-hover:bg-slate-700/50 group-hover:text-slate-900 dark:group-hover:text-white"
                         )}>
                             <Icon className="h-5 w-5" />
                         </div>
@@ -190,7 +190,7 @@ function NavbarItem({link, label, icon: Icon, description, clickCallback, isMobi
                     <div className="flex flex-col">
                         <span className="font-semibold text-base">{label}</span>
                         {description && (
-                            <span className="text-xs text-slate-500 group-hover:text-slate-400 transition-colors duration-300">
+                            <span className="text-xs text-slate-500 dark:text-slate-500 group-hover:text-slate-600 dark:group-hover:text-slate-400 transition-colors duration-300">
                                 {description}
                             </span>
                         )}
@@ -209,9 +209,9 @@ function NavbarItem({link, label, icon: Icon, description, clickCallback, isMobi
                 href={link}
                 className={cn(
                     "flex items-center gap-3 px-6 py-3 rounded-xl transition-all duration-300 relative overflow-hidden group",
-                    "text-slate-400 hover:text-white font-medium",
-                    "hover:bg-slate-800/50 hover:border-slate-700/50",
-                    isActive && "text-white bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30"
+                    "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-medium",
+                    "hover:bg-slate-100/50 dark:hover:bg-slate-800/50 hover:border-slate-300/50 dark:hover:border-slate-700/50",
+                    isActive && "text-slate-900 dark:text-white bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30"
                 )}
                 onClick={() => {
                     if (clickCallback) clickCallback();
@@ -221,7 +221,7 @@ function NavbarItem({link, label, icon: Icon, description, clickCallback, isMobi
                 {Icon && (
                     <Icon className={cn(
                         "h-5 w-5 transition-all duration-300",
-                        isActive ? "text-blue-400" : "text-slate-400 group-hover:text-white"
+                        isActive ? "text-blue-400" : "text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white"
                     )} />
                 )}
                 <span className="relative z-10">{label}</span>

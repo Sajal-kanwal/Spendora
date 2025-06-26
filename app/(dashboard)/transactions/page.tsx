@@ -1,6 +1,6 @@
 "use client";
 import React from 'react'
-import {differenceInDays, startOfMonth} from "date-fns";
+import {differenceInDays, startOfMonth, subDays} from "date-fns";
 import {MAX_DATE_RANGE_DAYS} from "@/lib/constants";
 import {toast} from "sonner";
 import {DateRangePicker} from "@/components/ui/date-range-picker";
@@ -13,7 +13,7 @@ import SkeletonWrapper from "@/components/SkeletonWrapper";
 
 function TransactionsPage() {
     const [dateRange, setDateRange] = React.useState<{ from: Date; to: Date }>({
-        from: startOfMonth(new Date()),
+        from: subDays(new Date(), MAX_DATE_RANGE_DAYS),
         to: new Date(),
     });
 

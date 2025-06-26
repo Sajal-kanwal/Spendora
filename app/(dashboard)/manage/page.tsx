@@ -13,7 +13,7 @@ import {cn} from "@/lib/utils";
 import {Category} from "@/lib/generated/prisma";
 import DeleteCategoryDialog from "@/app/(dashboard)/_components/DeleteCategoryDialog";
 import {Badge} from "@/components/ui/badge";
-import {Sheet, SheetContent, SheetTrigger, SheetTitle, SheetHeader} from "@/components/ui/sheet";
+import {Sheet, SheetContent, SheetTrigger, SheetTitle, SheetHeader, SheetDescription} from "@/components/ui/sheet";
 
 type ActiveSection = 'overview' | 'currency' | 'income' | 'expense';
 
@@ -53,11 +53,47 @@ function Page() {
         setMobileMenuOpen(false);
     };
 
-    const NavigationContent = () => (
-        <nav className="space-y-2 p-2">
+    const NavigationContent = ({ isMobile = false }: { isMobile?: boolean }) => (
+        <nav className={cn("space-y-2", isMobile ? "p-0" : "p-2")}>
             {menuItems.map((item) => {
                 const IconComponent = item.icon;
                 const isActive = activeSection === item.id;
+
+                if (isMobile) {
+                    return (
+                        <div key={item.id} className="relative group">
+                            <button
+                                onClick={() => handleSectionChange(item.id)}
+                                className={cn(
+                                    "flex items-center gap-4 w-full p-4 rounded-xl transition-all duration-300 group relative overflow-hidden",
+                                    "text-muted-foreground hover:text-foreground",
+                                    "hover:bg-muted/50 hover:border-muted-foreground/20",
+                                    isActive && "text-foreground bg-gradient-to-r from-primary/20 to-primary/10 border border-primary/30"
+                                )}
+                            >
+                                <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                <div className={cn(
+                                    "p-2 rounded-lg transition-all duration-300",
+                                    isActive
+                                        ? "bg-primary/20 text-primary"
+                                        : "bg-muted/50 text-muted-foreground group-hover:bg-muted group-hover:text-foreground"
+                                )}>
+                                    <IconComponent className="h-5 w-5" />
+                                </div>
+                                <div className="flex flex-col text-left">
+                                    <span className="font-semibold text-base">{item.label}</span>
+                                    <span className="text-xs text-muted-foreground group-hover:text-muted-foreground transition-colors duration-300">
+                                        {item.description}
+                                    </span>
+                                </div>
+                            </button>
+                            {isActive && (
+                                <div className="absolute left-0 top-1/2 h-8 w-1 -translate-y-1/2 rounded-r-full bg-gradient-to-b from-primary to-primary/80 shadow-lg shadow-primary/50"></div>
+                            )}
+                        </div>
+                    );
+                }
+
                 return (
                     <button
                         key={item.id}
@@ -90,6 +126,8 @@ function Page() {
         </nav>
     );
 
+    const currentMenuItem = menuItems.find(item => item.id === activeSection);
+
     return (
         <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
             {/* Modern Header */}
@@ -112,17 +150,32 @@ function Page() {
                         <div className="lg:hidden">
                             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
                                 <SheetTrigger asChild>
-                                    <Button variant="outline" size="sm" className="gap-2">
+                                    <Button
+                                        variant="outline"
+                                        size="sm"
+                                        className="gap-2"
+                                    >
                                         <Menu className="h-4 w-4" />
-                                        {menuItems.find(item => item.id === activeSection)?.label}
+                                        {currentMenuItem?.label || 'Menu'}
                                     </Button>
                                 </SheetTrigger>
-                                <SheetContent side="left" className="w-80">
-                                    <SheetHeader>
-                                        <SheetTitle>Settings Menu</SheetTitle>
+                                <SheetContent
+                                    side="left"
+                                    className="w-[320px] sm:w-[380px]"
+                                >
+                                    <SheetHeader className="text-left pb-6">
+                                        <SheetTitle className="flex items-center gap-3">
+                                            <div className="p-2 rounded-lg bg-primary/20 border border-primary/30">
+                                                <Settings className="h-5 w-5 text-primary" />
+                                            </div>
+                                            Settings Menu
+                                        </SheetTitle>
+                                        <SheetDescription>
+                                            Navigate through different settings sections
+                                        </SheetDescription>
                                     </SheetHeader>
-                                    <div className="mt-6">
-                                        <NavigationContent />
+                                    <div className="flex flex-col gap-3 pt-4">
+                                        <NavigationContent isMobile={true} />
                                     </div>
                                 </SheetContent>
                             </Sheet>

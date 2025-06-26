@@ -29,7 +29,6 @@ import {
 import { cn } from "@/lib/utils";
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import Picker from "@emoji-mart/react";
 import data from "@emoji-mart/data";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
@@ -46,6 +45,8 @@ interface Props {
 
 function CreateCategoryDialog({ type, successCallback, trigger }: Props) {
     const [open, setOpen] = React.useState(false);
+    const [emojiPickerOpen, setEmojiPickerOpen] = React.useState(false);
+
     const form = useForm<CreateCategorySchemaType>({
         resolver: zodResolver(CreateCategorySchema),
         defaultValues: {
@@ -116,7 +117,7 @@ function CreateCategoryDialog({ type, successCallback, trigger }: Props) {
                     </Button>
                 )}
             </DialogTrigger>
-            <DialogContent className="sm:max-w-[480px] bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-xl">
+            <DialogContent className="sm:max-w-[480px] max-h-[90vh] overflow-y-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-xl">
                 <DialogHeader className="space-y-3 pb-4">
                     <DialogTitle className="text-xl font-semibold flex items-center gap-2">
                         <div className={cn(
@@ -182,56 +183,97 @@ function CreateCategoryDialog({ type, successCallback, trigger }: Props) {
                                         Category Icon
                                     </FormLabel>
                                     <FormControl>
-                                        <Popover>
-                                            <PopoverTrigger asChild>
-                                                <Button
-                                                    variant="outline"
-                                                    type="button"
-                                                    className="h-[120px] w-full bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
-                                                >
-                                                    {form.watch("icon") ? (
-                                                        <div className="flex flex-col items-center gap-3">
-                                                            <div className="p-2 rounded-full bg-gray-100 dark:bg-gray-700">
-                                                                <span className="text-4xl" role="img" aria-label="Selected emoji">
-                                                                    {field.value}
-                                                                </span>
-                                                            </div>
-                                                            <div className="text-center">
-                                                                <p className="text-sm font-medium">Selected Icon</p>
-                                                                <p className="text-xs text-gray-500">Click to change</p>
-                                                            </div>
-                                                        </div>
-                                                    ) : (
-                                                        <div className="flex flex-col items-center gap-3">
-                                                            <div className="p-3 rounded-full bg-gray-100 dark:bg-gray-700">
-                                                                <CircleOff className="h-8 w-8 text-gray-400" />
-                                                            </div>
-                                                            <div className="text-center">
-                                                                <p className="text-sm font-medium">Choose an Icon</p>
-                                                                <p className="text-xs text-gray-500">Click to select emoji</p>
-                                                            </div>
-                                                        </div>
-                                                    )}
-                                                </Button>
-                                            </PopoverTrigger>
-                                            <PopoverContent
-                                                className="w-full p-0 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg"
-                                                align="center"
+                                        <div className="relative">
+                                            <Button
+                                                variant="outline"
+                                                type="button"
+                                                onClick={() => setEmojiPickerOpen(!emojiPickerOpen)}
+                                                className="h-[100px] sm:h-[120px] w-full bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
                                             >
-                                                <div className="p-2 border-b border-gray-200 dark:border-gray-700">
-                                                    <p className="text-sm font-medium text-center">Choose an Emoji</p>
-                                                </div>
-                                                <Picker
-                                                    data={data}
-                                                    theme={theme.resolvedTheme}
-                                                    onEmojiSelect={(emoji: { native: string }) => {
-                                                        field.onChange(emoji.native);
-                                                    }}
-                                                    previewPosition="none"
-                                                    skinTonePosition="none"
-                                                />
-                                            </PopoverContent>
-                                        </Popover>
+                                                {form.watch("icon") ? (
+                                                    <div className="flex flex-col items-center gap-2 sm:gap-3">
+                                                        <div className="p-1.5 sm:p-2 rounded-full bg-gray-100 dark:bg-gray-700">
+                                                            <span className="text-3xl sm:text-4xl" role="img" aria-label="Selected emoji">
+                                                                {field.value}
+                                                            </span>
+                                                        </div>
+                                                        <div className="text-center">
+                                                            <p className="text-xs sm:text-sm font-medium">Selected Icon</p>
+                                                            <p className="text-xs text-gray-500 hidden sm:block">Click to change</p>
+                                                        </div>
+                                                    </div>
+                                                ) : (
+                                                    <div className="flex flex-col items-center gap-2 sm:gap-3">
+                                                        <div className="p-2 sm:p-3 rounded-full bg-gray-100 dark:bg-gray-700">
+                                                            <CircleOff className="h-6 w-6 sm:h-8 sm:w-8 text-gray-400" />
+                                                        </div>
+                                                        <div className="text-center">
+                                                            <p className="text-xs sm:text-sm font-medium">Choose an Icon</p>
+                                                            <p className="text-xs text-gray-500 hidden sm:block">Click to select emoji</p>
+                                                        </div>
+                                                    </div>
+                                                )}
+                                            </Button>
+
+                                            {/* Custom positioned emoji picker */}
+                                            {emojiPickerOpen && (
+                                                <>
+                                                    {/* Backdrop */}
+                                                    <div
+                                                        className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm"
+                                                        onClick={() => setEmojiPickerOpen(false)}
+                                                    />
+
+                                                    {/* Emoji Picker - Centered */}
+                                                    {/* Emoji Picker - Centered */}
+                                                    {/* Emoji Picker - Centered */}
+                                                    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+                                                        <div className="w-full max-w-[360px] bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-xl max-h-[80vh] flex flex-col overflow-hidden">
+                                                            <div className="p-3 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between">
+                                                                <p className="text-sm font-medium">Choose an Emoji</p>
+                                                                <Button
+                                                                    variant="ghost"
+                                                                    size="sm"
+                                                                    onClick={() => setEmojiPickerOpen(false)}
+                                                                    className="h-6 w-6 p-0 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                                                >
+                                                                    ✕
+                                                                </Button>
+                                                            </div>
+                                                            <div className="emoji-picker-wrapper flex-1 overflow-hidden">
+                                                                <Picker
+                                                                    data={data}
+                                                                    theme={theme.resolvedTheme}
+                                                                    onEmojiSelect={(emoji: { native: string }) => {
+                                                                        field.onChange(emoji.native);
+                                                                        setEmojiPickerOpen(false);
+                                                                    }}
+                                                                    previewPosition="none"
+                                                                    skinTonePosition="none"
+                                                                    searchPosition="sticky"
+                                                                    navPosition="bottom"
+                                                                    perLine={6}
+                                                                    emojiSize={25}
+                                                                    set="native"
+                                                                    maxFrequentRows={2}
+                                                                    autoFocus={false}
+                                                                    style={{
+                                                                        width: '100%',
+                                                                        height: '100%',
+                                                                        margin: 0,
+                                                                        padding: 0,
+                                                                        boxSizing: 'border-box',
+                                                                        background: theme.resolvedTheme === 'dark' ? '#1f2937' : '#ffffff',
+                                                                        borderRadius: '0 0 0.5rem 0.5rem',
+                                                                    }}
+                                                                />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </>
+                                            )}
+                                        </div>
                                     </FormControl>
                                     <FormDescription className="text-xs text-gray-500">
                                         Select an emoji that represents this category visually
@@ -249,14 +291,14 @@ function CreateCategoryDialog({ type, successCallback, trigger }: Props) {
                                     <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Preview</span>
                                 </div>
                                 <div className="flex items-center gap-3 p-2 rounded-md bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600">
-                                    <span className="text-2xl" role="img">
+                                    <span className="text-xl sm:text-2xl" role="img">
                                         {form.watch("icon") || "📁"}
                                     </span>
-                                    <span className="font-medium">
+                                    <span className="font-medium flex-1 truncate">
                                         {form.watch("name") || "Category Name"}
                                     </span>
                                     <span className={cn(
-                                        "ml-auto px-2 py-1 rounded-full text-xs font-medium",
+                                        "px-2 py-1 rounded-full text-xs font-medium flex-shrink-0",
                                         type === "income"
                                             ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400"
                                             : "bg-rose-100 text-rose-700 dark:bg-rose-900/30 dark:text-rose-400"
