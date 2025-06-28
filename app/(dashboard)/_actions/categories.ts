@@ -34,9 +34,9 @@ export async function CreateCategory(form: CreateCategorySchemaType) {
 }
 
 export async function DeleteCategory(form: DeleteCategorySchemaType) {
-    const parsedBody =  DeleteCategorySchema.safeParse(form);
+    const parsedBody = DeleteCategorySchema.safeParse(form);
     if (!parsedBody.success) {
-        throw new Error("Category already exists");
+        throw new Error("Invalid request");
     }
 
     const user = await currentUser();
@@ -44,14 +44,9 @@ export async function DeleteCategory(form: DeleteCategorySchemaType) {
         redirect("/sign-in");
     }
 
-    return  await prisma.category.delete({
+    return await prisma.category.delete({
         where: {
-            name_userId_type: {
-                userId: user.id,
-                name: parsedBody.data.name,
-                type: parsedBody.data.type,
-            },
+            id: parsedBody.data.id,
         },
     });
-
 }

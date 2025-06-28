@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19da1c2b-9cbb-4b9e-9133-6996717d6e34" name="Changes" comment="Spendora Ready">
+    <list default="true" id="19da1c2b-9cbb-4b9e-9133-6996717d6e34" name="Changes" comment="UI updated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(dashboard)/_components/CreateCategoryDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(dashboard)/_components/CreateCategoryDialog.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(dashboard)/_components/Overview.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(dashboard)/_components/Overview.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(dashboard)/manage/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(dashboard)/manage/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(dashboard)/transactions/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(dashboard)/transactions/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/constants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(dashboard)/_actions/categories.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(dashboard)/_actions/categories.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(dashboard)/_components/DeleteCategoryDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(dashboard)/_components/DeleteCategoryDialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/categories/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/categories/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/migrations/20250623061223_init_schema/migration.sql" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/migrations/20250623061223_init_schema/migration.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schema/categories.ts" beforeDir="false" afterPath="$PROJECT_DIR$/schema/categories.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +109,8 @@
       <workItem from="1750917309426" duration="3171000" />
       <workItem from="1750920585500" duration="651000" />
       <workItem from="1750923129194" duration="1349000" />
-      <workItem from="1750933451011" duration="2825000" />
+      <workItem from="1750933451011" duration="3368000" />
+      <workItem from="1751118506413" duration="3815000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -240,7 +240,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750924022450</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="UI updated">
+      <option name="closed" value="true" />
+      <created>1750936650974</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1750936650974</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,6 +259,7 @@
     <MESSAGE value="Overview Section Updated" />
     <MESSAGE value="Dashboard Implemented" />
     <MESSAGE value="Spendora Ready" />
-    <option name="LAST_COMMIT_MESSAGE" value="Spendora Ready" />
+    <MESSAGE value="UI updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="UI updated" />
   </component>
 </project>

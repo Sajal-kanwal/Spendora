@@ -6,7 +6,7 @@ CREATE TABLE "UserSettings" (
 
 -- CreateTable
 CREATE TABLE "Category" (
-                            "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                            "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP,
                             "name" TEXT NOT NULL,
                             "userId" TEXT NOT NULL,
                             "icon" TEXT NOT NULL,
@@ -16,11 +16,11 @@ CREATE TABLE "Category" (
 -- CreateTable
 CREATE TABLE "Transaction" (
                                "id" TEXT NOT NULL PRIMARY KEY,
-                               "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-                               "upadateAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                               "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                               "upadateAt" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP,
                                "amount" REAL NOT NULL,
                                "description" TEXT NOT NULL,
-                               "date" DATETIME NOT NULL,
+                               "date" TIMESTAMP WITH TIME ZONE NOT NULL,
                                "userId" TEXT NOT NULL,
                                "type" TEXT NOT NULL DEFAULT 'income',
                                "category" TEXT NOT NULL,

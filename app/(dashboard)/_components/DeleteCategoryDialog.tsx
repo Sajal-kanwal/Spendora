@@ -7,13 +7,11 @@ import {DeleteCategory} from "@/app/(dashboard)/_actions/categories";
 import {toast} from "sonner";
 import {
     AlertDialog, AlertDialogAction, AlertDialogCancel,
-    AlertDialogContent, AlertDialogDescription, AlertDialogFooter,
-    AlertDialogHeader,
+    AlertDialogContent, AlertDialogDescription,
     AlertDialogTitle,
     AlertDialogTrigger
 } from "@/components/ui/alert-dialog";
-import {TransactionType} from "@/lib/types";
-import {AlertTriangle, Trash2, Tag} from "lucide-react";
+import {AlertTriangle, Trash2} from "lucide-react";
 import {Badge} from "@/components/ui/badge";
 
 interface Props {
@@ -51,8 +49,7 @@ function DeleteCategoryDialog({category, trigger, successCallback}: Props) {
             id: categoryIdentifier,
         });
         deleteMutation.mutate({
-            name: category.name,
-            type: category.type as TransactionType,
+            id: category.id,
         });
     };
 

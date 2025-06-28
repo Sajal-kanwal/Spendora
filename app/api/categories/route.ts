@@ -24,12 +24,20 @@ export async function GET(request: Request) {
     const categories = await prisma.category.findMany({
         where: {
             userId: user.id,
-            ...(type && {type}),
+            ...(type && { type }),
         },
         orderBy: {
             name: "asc",
-        }
+        },
+        select: {
+            id: true,
+            name: true,
+            icon: true,
+            type: true,
+            userId: true,
+        },
     });
+
 
     return Response.json(categories);
 }
